@@ -1,41 +1,20 @@
 // importando o flutter para dentro do dart
 import 'package:flutter/material.dart';
+import 'package:payflow_nlw_together_flutter/models/login/loginPage.dart';
+import 'package:payflow_nlw_together_flutter/models/splash/splashPage.dart';
+import 'package:payflow_nlw_together_flutter/shared/themes/appColors.dart';
 
 void main() {
-  runApp(MaterialApp(
-      theme: ThemeData(primarySwatch: Colors.blue), home: HomePage()));
+  runApp(AppWidget());
 }
 
-class HomePage extends StatefulWidget {
-  @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-  var count = 0;
-
-  void increment() {
-    count++;
-    setState(() {});
-  }
-
+class AppWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Meu primeiro app"),
-      ),
-      body: Center(
-          child: Text(
-        "Contador\n$count",
-        textAlign: TextAlign.center,
-      )),
-      floatingActionButton: FloatingActionButton(
-        child: const Icon(Icons.add),
-        onPressed: () {
-          increment();
-        },
-      ),
+    return MaterialApp(
+      title: "Payflow",
+      theme: ThemeData(primaryColor: AppColors.primary),
+      home: LoginPage(),
     );
   }
 }
