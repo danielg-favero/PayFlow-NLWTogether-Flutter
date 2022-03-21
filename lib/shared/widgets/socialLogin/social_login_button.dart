@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:payflow_nlw_together_flutter/shared/themes/appColors.dart';
-import 'package:payflow_nlw_together_flutter/shared/themes/appImages.dart';
-import 'package:payflow_nlw_together_flutter/shared/themes/appTextStyles.dart';
+import 'package:payflow_nlw_together_flutter/shared/themes/app_colors.dart';
+import 'package:payflow_nlw_together_flutter/shared/themes/app_images.dart';
+import 'package:payflow_nlw_together_flutter/shared/themes/app_text_styles.dart';
 
 class SocialLoginButton extends StatelessWidget {
   const SocialLoginButton({Key? key, required this.onTap}) : super(key: key);
@@ -26,7 +26,7 @@ class SocialLoginButton extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Image.asset(AppImages.google),
-                        SizedBox(width: 16),
+                        const SizedBox(width: 16),
                         Container(height: 56, width: 1, color: AppColors.stroke)
                       ])),
               Expanded(

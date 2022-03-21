@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:payflow_nlw_together_flutter/shared/themes/appColors.dart';
-import 'package:payflow_nlw_together_flutter/shared/themes/appImages.dart';
-import 'package:payflow_nlw_together_flutter/shared/themes/appTextStyles.dart';
-import 'package:payflow_nlw_together_flutter/shared/widgets/socialLogin/socialLoginButton.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+import 'package:payflow_nlw_together_flutter/shared/themes/app_colors.dart';
+import 'package:payflow_nlw_together_flutter/shared/themes/app_images.dart';
+import 'package:payflow_nlw_together_flutter/shared/themes/app_text_styles.dart';
+import 'package:payflow_nlw_together_flutter/shared/widgets/socialLogin/social_login_button.dart';
+
+import 'login_controller.dart';
 
 class LoginPage extends StatefulWidget {
   LoginPage({Key? key}) : super(key: key);
@@ -12,6 +15,8 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  final loginController = LoginController();
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -49,7 +54,7 @@ class _LoginPageState extends State<LoginPage> {
                         Image.asset(AppImages.logomini),
                         Padding(
                           padding: const EdgeInsets.only(
-                              top: 30, left: 70, right: 70),
+                              top: 10, left: 70, right: 70),
                           child: Text("Organize seus boletos em um só lugar",
                               textAlign: TextAlign.center,
                               style: TextStyles.titleHome),
@@ -57,8 +62,8 @@ class _LoginPageState extends State<LoginPage> {
                         Padding(
                             padding: const EdgeInsets.only(
                                 left: 40, right: 40, top: 40),
-                            child: SocialLoginButton(onTap: () {
-                              print("oiiii");
+                            child: SocialLoginButton(onTap: () async {
+                              loginController.googleSigIn(context);
                             }))
                       ],
                     ))

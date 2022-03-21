@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:payflow_nlw_together_flutter/shared/themes/appColors.dart';
-import 'package:payflow_nlw_together_flutter/shared/themes/appImages.dart';
+import 'package:payflow_nlw_together_flutter/shared/themes/app_colors.dart';
+import 'package:payflow_nlw_together_flutter/shared/themes/app_images.dart';
 
 class SplashPage extends StatelessWidget {
   @override
